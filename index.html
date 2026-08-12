@@ -147,14 +147,31 @@
 
         /* 1.1 Destaque Inicial (Hero) */
         .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, var(--primary) 0%, #133b66 100%);
-            color: var(--white);
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            position: relative;
+            background-image: url('imagens/capa.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 0;
+            color: #ffffff;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 25, 43, 0.88);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
         .hero-content {
             max-width: 800px;
         }
@@ -225,6 +242,46 @@
             color: var(--secondary);
         }
 
+        /* Estilo Minimalista para Indicadores/Contadores */
+        .stats-minimal-container {
+            background-color: var(--primary);
+            padding: 60px 20px;
+            width: 100%;
+        }
+
+        .stats-minimal-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .stat-item-min {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-item-min .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .stat-item-min .stat-label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
         /* 1.3 & 3. Nossas Soluções */
         .solutions-grid {
             display: grid;
@@ -264,10 +321,6 @@
             font-size: 0.95rem;
         }
 
-        .center-btn {
-            text-align: center;
-        }
-
         /* 4. Break Bulk & 5. Armazenamento & 9. Porto de Santos */
         .service-detail-grid {
             display: grid;
@@ -294,7 +347,7 @@
 
         /* 7. Sistema de Cargas para Terminais */
         .system-section {
-            background: linear-gradient(rgba(10, 37, 64, 0.92), rgba(10, 37, 64, 0.92)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(10, 37, 64, 0.92), rgba(10, 37, 64, 0.92)), url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--white);
             text-align: center;
         }
@@ -387,100 +440,94 @@
         }
 
         /* 10. Contato & Footer */
-        /* Estilos gerais da seção de contato */
-.contato-secao {
-    padding: 80px 20px;
-    background-color: #f9fbfd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        .contato-secao {
+            padding: 80px 20px;
+            background-color: #f9fbfd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-.contato-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        .contato-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-/* Cabeçalho */
-.contato-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
+        .contato-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.contato-header h2 {
-    color: #1a365d;
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
+        .contato-header h2 {
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
 
-.contato-header p {
-    color: #4a5568;
-    font-size: 1.1rem;
-}
+        .contato-header p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
 
-/* Layout em Grid (Lado a Lado) */
-.contato-conteudo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
+        .contato-conteudo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
 
-/* Caixa de Informações */
-.info-caixa h3 {
-    font-size: 1.4rem;
-    color: #2d3748;
-    margin-bottom: 25px;
-}
+        .info-caixa h3 {
+            font-size: 1.4rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
 
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-.info-item i {
-    font-size: 1.3rem;
-    color: #3182ce;
-    margin-right: 15px;
-    margin-top: 3px;
-}
+        .info-item i {
+            font-size: 1.3rem;
+            color: #3182ce;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
 
-.info-item strong {
-    display: block;
-    color: #2d3748;
-    font-size: 0.95rem;
-}
+        .info-item strong {
+            display: block;
+            color: #2d3748;
+            font-size: 0.95rem;
+        }
 
-.info-item p {
-    color: #4a5568;
-    font-size: 1rem;
-    margin: 0;
-}
+        .info-item p {
+            color: #4a5568;
+            font-size: 1rem;
+            margin: 0;
+        }
 
-/* Caixa do Mapa */
-.mapa-caixa {
-    width: 100%;
-    height: 100%;
-    min-height: 350px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+        .mapa-caixa {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-/* Responsividade para Celulares */
-@media (max-width: 768px) {
-    .contato-conteudo {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    
-    .mapa-caixa {
-        min-height: 300px;
-    }
-}
+        @media (max-width: 768px) {
+            .contato-conteudo {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .mapa-caixa {
+                min-height: 300px;
+            }
+        }
+
         footer {
             background-color: var(--primary);
             color: #94a3b8;
@@ -493,7 +540,6 @@
             color: #cbd5e1;
         }
 
-        /* Responsividade */
         @media (max-width: 992px) {
             .grid-2, .service-detail-grid, .contact-grid {
                 grid-template-columns: 1fr;
@@ -524,110 +570,108 @@
         }
 
         /* Estilização dos Pilares */
-.pilares-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-.pilar-item {
-    background: var(--white);
-    padding: 25px 20px;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid #e2e8f0;
-    transition: var(--transition);
-    cursor: default;
-}
+        .pilar-item {
+            background: var(--white);
+            padding: 25px 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            cursor: default;
+        }
 
-.pilar-item:hover {
-    border-color: var(--secondary);
-    background: #f0f7ff;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
+        .pilar-item:hover {
+            border-color: var(--secondary);
+            background: #f0f7ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
 
-.pilar-item i {
-    font-size: 2rem;
-    color: var(--secondary);
-    margin-bottom: 15px;
-    display: block;
-}
+        .pilar-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-.pilar-item h4 {
-    font-size: 1rem;
-    color: var(--primary);
-    font-weight: 600;
-}
-/* Estilos do Carrossel de Logotipos Coloridos */
-.partners-section {
-    padding: 60px 0;
-    background-color: var(--white);
-    overflow: hidden;
-}
+        .pilar-item h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-.logo-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
+        /* Estilos do Carrossel de Logotipos Coloridos */
+        .partners-section {
+            padding: 60px 0;
+            background-color: var(--white);
+            overflow: hidden;
+        }
 
-.logo-track {
-    display: flex;
-    gap: 30px;
-    width: max-content;
-    animation: scrollLogos 30s linear infinite;
-}
+        .logo-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
 
-.logo-track:hover {
-    animation-play-state: paused; /* Pausa o carrossel quando o mouse passa por cima */
-}
+        .logo-track {
+            display: flex;
+            gap: 30px;
+            width: max-content;
+            animation: scrollLogos 30s linear infinite;
+        }
 
-.logo-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 180px;
-    height: 90px;
-    background: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    transition: var(--transition);
-}
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
 
-.logo-slide:hover {
-    border-color: var(--secondary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
-}
+        .logo-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            height: 90px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
 
-/* Garante que os logos fiquem coloridos e com boa proporção */
-.logo-slide img {
-    max-height: 55px;
-    max-width: 140px;
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    filter: none; /* Mantém as cores originais da imagem */
-    opacity: 1;    /* Totalmente visível/colorido */
-    transition: var(--transition);
-}
+        .logo-slide:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
 
-/* Animação de rolagem contínua */
-@keyframes scrollLogos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 15px));
-    }
-}
+        .logo-slide img {
+            max-height: 55px;
+            max-width: 140px;
+            object-fit: contain;
+            width: 100%;
+            height: auto;
+            filter: none;
+            opacity: 1;
+            transition: var(--transition);
+        }
 
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-50% - 15px));
+            }
+        }
     </style>
 </head>
 <body>
@@ -706,6 +750,28 @@
         </div>
     </section>
 
+    <!-- Nova Área de Contadores / Indicadores (Estilo Minimalista) -->
+    <div class="stats-minimal-container">
+        <div class="stats-minimal-grid">
+            <div class="stat-item-min">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Projetos Realizados</div>
+            </div>
+            <div class="stat-item-min">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="stat-item-min">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Foco em Eficiência</div>
+            </div>
+            <div class="stat-item-min">
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Suporte Operacional</div>
+            </div>
+        </div>
+    </div>
+
     <!-- 1.3 & 3. Nossas Soluções -->
     <section id="solucoes">
         <div class="container">
@@ -738,39 +804,39 @@
             </div>
 
             <!-- Subseções de Soluções - Versão Ajustada -->
-<div class="pilares-container" style="margin-top: 50px;">
-    <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px; font-size: 1.6rem;">Pilares da Gestão de Soluções</h3>
-    <div class="pilares-grid">
-        <div class="pilar-item">
-            <i class="fas fa-link"></i>
-            <h4>Logística Integrada</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-tasks"></i>
-            <h4>Gestão de Operações</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-handshake"></i>
-            <h4>Contratação de Terminais</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-chart-line"></i>
-            <h4>Negociação Tarifária</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-map"></i>
-            <h4>Planejamento Logístico</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-eye"></i>
-            <h4>Acompanhamento Operacional</h4>
-        </div>
-        <div class="pilar-item">
-            <i class="fas fa-tools"></i>
-            <h4>Desenhos Personalizados</h4>
-        </div>
-    </div>
-</div>
+            <div class="pilares-container" style="margin-top: 50px;">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px; font-size: 1.6rem;">Pilares da Gestão de Soluções</h3>
+                <div class="pilares-grid">
+                    <div class="pilar-item">
+                        <i class="fas fa-link"></i>
+                        <h4>Logística Integrada</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Gestão de Operações</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Contratação de Terminais</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Negociação Tarifária</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-map"></i>
+                        <h4>Planejamento Logístico</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-eye"></i>
+                        <h4>Acompanhamento Operacional</h4>
+                    </div>
+                    <div class="pilar-item">
+                        <i class="fas fa-tools"></i>
+                        <h4>Desenhos Personalizados</h4>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </section>
@@ -952,35 +1018,34 @@
             </div>
         </div>
     </section>
+
     <!-- Seção Parceiros e Clientes -->
-<section id="parceiros" class="partners-section">
-    <div class="container">
-        <div class="section-title" style="margin-bottom: 30px;">
-            <h2>Parceiros e Clientes</h2>
-            <p>Empresas que confiam em nossa expertise logística.</p>
-        </div>
-        
-        <div class="logo-carousel">
-            <div class="logo-track">
-                <!-- Conjunto de logotipos 1 -->
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                
-                <!-- Conjunto duplicado para criar o efeito infinito contínuo -->
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
-                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+    <section id="parceiros" class="partners-section">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 30px;">
+                <h2>Parceiros e Clientes</h2>
+                <p>Empresas que confiam em nossa expertise logística.</p>
+            </div>
+            
+            <div class="logo-carousel">
+                <div class="logo-track">
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                    <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- 1.6 Chamada Comercial / CTA Intermediária -->
     <section style="padding: 40px 0;">
@@ -996,17 +1061,12 @@
     <!-- 10. Contato -->
     <section id="contato" class="contato-secao">
         <div class="contato-container">
-            
-            <!-- Cabeçalho da Seção -->
             <div class="contato-header">
                 <h2>Vamos conversar sobre sua operação?</h2>
                 <p>Entre em contato com a Eltex's e conheça nossas soluções logísticas personalizadas.</p>
             </div>
     
-            <!-- Conteúdo Principal: Informações + Mapa -->
             <div class="contato-conteudo">
-                
-                <!-- Caixa de Informações de Contato -->
                 <div class="info-caixa">
                     <h3>Informações de Contato</h3>
                     
@@ -1043,10 +1103,9 @@
                     </div>
                 </div>
     
-                <!-- Caixa do Mapa do Google Maps -->
                 <div class="mapa-caixa">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.7690326577626!2d-46.32820212465826!3d-23.93323147854605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce0480fbe7a27f%3A0xa3c93d9f192a8fa0!2sEltex's%20Consultoria%20Log%C3%ADstica%20e%20Sistemas%20de%20Terminais%20de%20Carga!5e0!3m2!1spt-BR!2sbr!4v1786492452985!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.7690326577626!2d-46.32820212465826!3d-23.93323147854605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce0480fbe7a27f%3A0xa3c93d9f192a8fa0!2sEltex's%20Consultoria%20Log%C3%ADstica%20e%20Sistemas%20de%20Terminais%20de%20Carga!5e0!3m2!1spt-BR!2sbr!4v1786492452985!5m2!1spt-BR!2sbr" 
                         width="100%" 
                         height="100%" 
                         style="border:0;" 
@@ -1055,7 +1114,6 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-    
             </div>
         </div>
     </section>
@@ -1067,7 +1125,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript para Menu Responsivo e Rolagem Ativa -->
+    <!-- JavaScript para Menu Responsivo, Rolagem Ativa e Contadores Dinâmicos -->
     <script>
         // Menu Responsivo Hamburguer
         const hamburger = document.getElementById('hamburger');
@@ -1080,7 +1138,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Fechar menu ao clicar em um link mobile
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -1098,7 +1155,6 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (pageYOffset >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
@@ -1110,6 +1166,50 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // Efeito de Contagem Dinâmica dos Indicadores
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".stat-number");
+            let animated = false;
+
+            const runCounter = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute("data-target");
+                    let count = 0;
+                    const speed = target / 40;
+
+                    const updateCount = () => {
+                        count += speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 30);
+                        } else {
+                            if (target === 500) counter.innerText = "+500";
+                            else if (target === 15) counter.innerText = "15+";
+                            else if (target === 100) counter.innerText = "100%";
+                            else if (target === 24) counter.innerText = "24/7";
+                            else counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        runCounter();
+                        animated = true;
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            const statsSection = document.querySelector(".stats-minimal-container");
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
         });
     </script>
 </body>
