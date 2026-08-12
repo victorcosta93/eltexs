@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eltex's | Consultoria Logística e Sistemas de Terminais e Cargas</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #0066cc;
+            --accent: #ff6b00;
+            --light-bg: #f8f9fa;
+            --dark-text: #333333;
+            --light-text: #666666;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #e05e00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--secondary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* 1.1 Destaque Inicial (Hero) */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, #133b66 100%);
+            color: var(--white);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+
+        .hero-tagline {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-left: 4px solid var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 1.2 A Eltex's / Quem Somos */
+        section {
+            padding: 90px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-card, .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .features-list li i {
+            color: var(--secondary);
+        }
+
+        /* 1.3 & 3. Nossas Soluções */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .solution-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .solution-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        .center-btn {
+            text-align: center;
+        }
+
+        /* 4. Break Bulk & 5. Armazenamento & 9. Porto de Santos */
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #e2e8f0;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* 7. Sistema de Cargas para Terminais */
+        .system-section {
+            background: linear-gradient(rgba(10, 37, 64, 0.92), rgba(10, 37, 64, 0.92)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .system-section h2 {
+            color: var(--white);
+        }
+
+        .system-section p {
+            color: #cbd5e1;
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .system-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .system-item i {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* 8. Diferenciais */
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .differential-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-left: 3px solid var(--accent);
+        }
+
+        .differential-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .differential-card p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* 1.6 CTA Intermediária */
+        .cta-box {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-box .btn {
+            background-color: var(--white);
+            color: var(--secondary);
+        }
+
+        .cta-box .btn:hover {
+            background-color: var(--light-bg);
+        }
+
+        /* 10. Contato & Footer */
+        /* Estilos gerais da seção de contato */
+.contato-secao {
+    padding: 80px 20px;
+    background-color: #f9fbfd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contato-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.contato-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contato-header h2 {
+    color: #1a365d;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contato-header p {
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+/* Layout em Grid (Lado a Lado) */
+.contato-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Caixa de Informações */
+.info-caixa h3 {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.3rem;
+    color: #3182ce;
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.info-item strong {
+    display: block;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.info-item p {
+    color: #4a5568;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Caixa do Mapa */
+.mapa-caixa {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .mapa-caixa {
+        min-height: 300px;
+    }
+}
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #cbd5e1;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .grid-2, .service-detail-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                transition: var(--transition);
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+        }
+
+        /* Estilização dos Pilares */
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.pilar-item {
+    background: var(--white);
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+    cursor: default;
+}
+
+.pilar-item:hover {
+    border-color: var(--secondary);
+    background: #f0f7ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.pilar-item i {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.pilar-item h4 {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+/* Estilos do Carrossel de Logotipos Coloridos */
+.partners-section {
+    padding: 60px 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.logo-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+}
+
+.logo-track:hover {
+    animation-play-state: paused; /* Pausa o carrossel quando o mouse passa por cima */
+}
+
+.logo-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 90px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.logo-slide:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* Garante que os logos fiquem coloridos e com boa proporção */
+.logo-slide img {
+    max-height: 55px;
+    max-width: 140px;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    filter: none; /* Mantém as cores originais da imagem */
+    opacity: 1;    /* Totalmente visível/colorido */
+    transition: var(--transition);
+}
+
+/* Animação de rolagem contínua */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header & Menu Simplificado -->
+    <header>
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                ELTEX'S
+                <span>Consultoria Logística</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio" class="active">Início</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#sistema-cargas">Sistema de Cargas</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#porto-santos">Porto de Santos</a></li>
+                <li><a href="#parceiros">Parceiros</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 1. HOME / 1.1 Destaque Inicial -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Eltex's Consultoria Logística e Sistema de Cargas para Terminais</h1>
+                <p>Atuação especializada e estratégica em operações logísticas, terminais, armazenagem, comércio exterior e movimentação de cargas.</p>
+                <div class="hero-tagline">
+                    Soluções logísticas inteligentes para operações mais eficientes e competitivas.
+                </div>
+                <a href="#contato" class="btn">Fale com a Eltex's</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.2 A Eltex's / Quem Somos -->
+    <section id="quem-somos" class="bg-light">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                        <h2>A Eltex's & Quem Somos</h2>
+                        <p>Excelência institucional e conhecimento profundo em redes logísticas complexas.</p>
+                    </div>
+                    <p style="margin-bottom: 20px; color: var(--light-text);">
+                        Possuímos vasta experiência no mercado nacional e internacional, com amplo conhecimento em operações logísticas, terminais alfandegados, comércio exterior e portos.
+                    </p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Experiência no mercado nacional e internacional</li>
+                        <li><i class="fas fa-check-circle"></i> Conhecimento avançado em logística integrada</li>
+                        <li><i class="fas fa-check-circle"></i> Expertise com terminais alfandegados</li>
+                        <li><i class="fas fa-check-circle"></i> Atuação estratégica em comércio exterior</li>
+                        <li><i class="fas fa-check-circle"></i> Domínio completo das operações portuárias</li>
+                        <li><i class="fas fa-check-circle"></i> Gestão de operações logísticas de ponta a ponta</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="about-card">
+                        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.3rem;">Tradição e Inovação Logística</h3>
+                        <p style="color: var(--light-text); margin-bottom: 15px;">
+                            Desenvolvemos desenhos logísticos personalizados que asseguram eficiência operacional, mitigação de riscos e redução de custos inteligentes para os nossos parceiros.
+                        </p>
+                        <p style="color: var(--light-text);">
+                            Nosso compromisso é entregar visibilidade total e controle absoluto em cada etapa da cadeia de suprimentos.
+                        </p>
+                    </div>
+                </div>              
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1.3 & 3. Nossas Soluções -->
+    <section id="solucoes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossas Soluções</h2>
+                <p>Experiência, conhecimento e gestão para operações logísticas mais eficientes.</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Soluções Logísticas</h3>
+                    <p>Operações inteligentes e logística integrada para atender a diferentes necessidades e complexidades de mercado.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>Break Bulk</h3>
+                    <p>Gestão completa de grandes operações de descarga, transporte, embarque e armazenagem de cargas soltas ou gerais.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Armazenamento</h3>
+                    <p>Soluções especializadas para armazenamento de cargas e contêineres em diferentes tipos de recintos alfandegados e gerais.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Despacho Aduaneiro</h3>
+                    <p>Serviços estratégicos voltados aos processos de importação e exportação, garantindo agilidade e conformidade.</p>
+                </div>
+            </div>
+
+            <!-- Subseções de Soluções - Versão Ajustada -->
+<div class="pilares-container" style="margin-top: 50px;">
+    <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px; font-size: 1.6rem;">Pilares da Gestão de Soluções</h3>
+    <div class="pilares-grid">
+        <div class="pilar-item">
+            <i class="fas fa-link"></i>
+            <h4>Logística Integrada</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-tasks"></i>
+            <h4>Gestão de Operações</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Contratação de Terminais</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-chart-line"></i>
+            <h4>Negociação Tarifária</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-map"></i>
+            <h4>Planejamento Logístico</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-eye"></i>
+            <h4>Acompanhamento Operacional</h4>
+        </div>
+        <div class="pilar-item">
+            <i class="fas fa-tools"></i>
+            <h4>Desenhos Personalizados</h4>
+        </div>
+    </div>
+</div>
+            
+        </div>
+    </section>
+
+    <!-- 4. Break Bulk & 5. Armazenamento -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="grid-2" style="margin-bottom: 70px;">
+                <div>
+                    <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">Operação Especializada</span>
+                    <h2 style="font-size: 2rem; color: var(--primary); margin: 10px 0 20px;">Break Bulk</h2>
+                    <p style="color: var(--light-text); margin-bottom: 20px;">
+                        A Eltex's atua com excelência em grandes operações de movimentação de cargas break bulk, assegurando integridade e agilidade logística no Porto de Santos.
+                    </p>
+                    <div class="tag-cloud">
+                        <span class="tag">Descarga de navios</span>
+                        <span class="tag">Transporte</span>
+                        <span class="tag">Embarque</span>
+                        <span class="tag">Armazenagem</span>
+                        <span class="tag">Gestão da operação</span>
+                        <span class="tag">Acompanhamento logístico</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-card">
+                        <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">Infraestrutura e Recintos</span>
+                        <h2 style="font-size: 2rem; color: var(--primary); margin: 10px 0 20px;">Armazenamento de Cargas</h2>
+                        <p style="color: var(--light-text); margin-bottom: 15px;">
+                            Soluções abrangentes para diferentes tipos de cargas e contêineres, atuando diretamente em recintos alfandegados, IPA, CLIA, Operadores Portuários, Portos Secos, REDEX e Armazéns Gerais.
+                        </p>
+                        <div class="tag-cloud">
+                            <span class="tag">Cargas soltas</span>
+                            <span class="tag">NTO</span>
+                            <span class="tag">Cargas superdimensionadas</span>
+                            <span class="tag">Desova</span>
+                            <span class="tag">Cargas classificadas</span>
+                            <span class="tag">Contêineres</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Despacho Aduaneiro -->
+            <div class="info-card" style="text-align: center; max-width: 900px; margin: 0 auto; background: var(--white);">
+                <i class="fas fa-stamp" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 15px;">Despacho Aduaneiro</h3>
+                <p style="color: var(--light-text); font-size: 1.05rem;">
+                    Serviços voltados às necessidades específicas dos processos de importação e exportação, buscando maior clareza, qualidade e eficiência na condução das operações aduaneiras.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Sistema de Cargas para Terminais -->
+    <section id="sistema-cargas" class="system-section">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 30px;">
+                <h2 style="color: var(--white);">Sistema de Cargas para Terminais</h2>
+                <p>Tecnologia e centralização para controle total da sua operação logística.</p>
+            </div>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; text-align: center;">
+                Uma ferramenta desenvolvida para integrar etapas e simplificar o acompanhamento de cargas em terminais, trazendo inteligência digital para o dia a dia operacional.
+            </p>
+            
+            <div class="system-grid">
+                <div class="system-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Gestão das Operações</h3>
+                    <p style="font-size: 0.9rem;">Controle unificado de fluxos logísticos e portuários.</p>
+                </div>
+                <div class="system-item">
+                    <i class="fas fa-search-location"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Acompanhamento de Cargas</h3>
+                    <p style="font-size: 0.9rem;">Visibilidade detalhada do status e localização das cargas.</p>
+                </div>
+                <div class="system-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Integração das Etapas</h3>
+                    <p style="font-size: 0.9rem;">Sincronização entre os elos da cadeia de suprimentos.</p>
+                </div>
+                <div class="system-item">
+                    <i class="fas fa-server"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Centralização de Informações</h3>
+                    <p style="font-size: 0.9rem;">Dados unificados para tomadas de decisão assertivas.</p>
+                </div>
+                <div class="system-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Controle Operacional</h3>
+                    <p style="font-size: 0.9rem;">Rigor técnico e conformidade em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Diferenciais -->
+    <section id="diferenciais">
+        <div class="container">
+            <div class="section-title">
+                <h2>Diferenciais da Eltex's</h2>
+                <p>Por que escolher nossa estrutura para gerenciar e otimizar sua cadeia logística?</p>
+            </div>
+
+            <div class="differentials-grid">
+                <div class="differential-card">
+                    <h3>Competitividade</h3>
+                    <p>Maior competitividade na contratação de terminais e armazéns gerais alfandegados.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Economia para Cargas Especiais</h3>
+                    <p>Melhores preços e competitividade para cargas superdimensionadas e pesadas.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Gestão Logística</h3>
+                    <p>Acompanhamento rigoroso e proativo de todas as fases das operações.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Atendimento 24 Horas</h3>
+                    <p>Operações e suporte contínuo nas importações e exportações marítimas.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Negociação Tarifária</h3>
+                    <p>Poder de barganha e otimização de custos junto aos terminais utilizados.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Gestão Integrada</h3>
+                    <p>Operação unificada e simplificada através de um único gestor dedicado.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Personalização</h3>
+                    <p>Desenhos logísticos sob medida estruturados para cada tipo específico de carga.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Compromisso</h3>
+                    <p>Segurança, qualidade, rigor técnico e seriedade em todas as entregas.</p>
+                </div>
+                <div class="differential-card">
+                    <h3>Economia Inteligente</h3>
+                    <p>Soluções orientadas estrategicamente à máxima eficiência e redução de custos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Operações no Porto de Santos -->
+    <section id="porto-santos" class="bg-light">
+        <div class="container">
+            <div class="service-detail-grid">
+                <div>
+                    <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem;">Complexo Portuário de Destaque</span>
+                    <h2 style="font-size: 2.2rem; color: var(--primary); margin: 10px 0 20px;">Atuação no Porto de Santos</h2>
+                    <p style="color: var(--light-text); margin-bottom: 20px; font-size: 1.05rem;">
+                        Contamos com vasta experiência e profundo conhecimento técnico para conduzir operações com total segurança no principal complexo portuário da América Latina.
+                    </p>
+                    <p style="color: var(--dark-text); font-weight: 600; margin-bottom: 15px;">Principais frentes de atuação em Santos:</p>
+                    <div class="tag-cloud">
+                        <span class="tag">Importação</span>
+                        <span class="tag">Exportação marítima</span>
+                        <span class="tag">Descarga de navios</span>
+                        <span class="tag">Embarque</span>
+                        <span class="tag">Transporte</span>
+                        <span class="tag">Armazenagem</span>
+                        <span class="tag">Terminais</span>
+                        <span class="tag">Cargas break bulk</span>
+                        <span class="tag">Cargas pesadas</span>
+                        <span class="tag">Cargas superdimensionadas</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-card" style="border-left: 5px solid var(--primary);">
+                        <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.2rem;">Expertise Portuária Comprovada</h3>
+                        <p style="color: var(--light-text); margin-bottom: 15px;">
+                            A complexidade do Porto de Santos exige agilidade regulatória, inteligência tática e forte relacionamento operacional. A Eltex's conecta sua carga aos melhores berços, armazéns e rotas de escoamento.
+                        </p>
+                        <blockquote style="font-style: italic; color: var(--secondary); border-left: 3px solid var(--accent); padding-left: 15px; margin-top: 20px;">
+                            "Experiência e conhecimento para conduzir operações no principal complexo portuário da América Latina."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Seção Parceiros e Clientes -->
+<section id="parceiros" class="partners-section">
+    <div class="container">
+        <div class="section-title" style="margin-bottom: 30px;">
+            <h2>Parceiros e Clientes</h2>
+            <p>Empresas que confiam em nossa expertise logística.</p>
+        </div>
+        
+        <div class="logo-carousel">
+            <div class="logo-track">
+                <!-- Conjunto de logotipos 1 -->
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                
+                <!-- Conjunto duplicado para criar o efeito infinito contínuo -->
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+                <div class="logo-slide"><img src="imagens/gelog.png" alt="Gelog"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- 1.6 Chamada Comercial / CTA Intermediária -->
+    <section style="padding: 40px 0;">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Como podemos ajudar sua operação?</h2>
+                <p>Cada operação possui necessidades específicas. A Eltex's desenvolve soluções logísticas personalizadas para diferentes tipos de cargas e operações.</p>
+                <a href="#contato" class="btn">Fale com a Eltex's</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Contato -->
+    <section id="contato" class="contato-secao">
+        <div class="contato-container">
+            
+            <!-- Cabeçalho da Seção -->
+            <div class="contato-header">
+                <h2>Vamos conversar sobre sua operação?</h2>
+                <p>Entre em contato com a Eltex's e conheça nossas soluções logísticas personalizadas.</p>
+            </div>
+    
+            <!-- Conteúdo Principal: Informações + Mapa -->
+            <div class="contato-conteudo">
+                
+                <!-- Caixa de Informações de Contato -->
+                <div class="info-caixa">
+                    <h3>Informações de Contato</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Telefone</strong>
+                            <p>(13) 3295-5770</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>(13) 99000-0000</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <p>comercial@eltexs.com.br</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço</strong>
+                            <p>Praça da República, 62 - Sala 104, Centro, Santos/SP</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Caixa do Mapa do Google Maps -->
+                <div class="mapa-caixa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.7690326577626!2d-46.32820212465826!3d-23.93323147854605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce0480fbe7a27f%3A0xa3c93d9f192a8fa0!2sEltex's%20Consultoria%20Log%C3%ADstica%20e%20Sistemas%20de%20Terminais%20de%20Carga!5e0!3m2!1spt-BR!2sbr!4v1786492452985!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Eltex's Consultoria Logística e Sistemas de Terminais e Cargas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Menu Responsivo e Rolagem Ativa -->
+    <script>
+        // Menu Responsivo Hamburguer
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fechar menu ao clicar em um link mobile
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Destacar link ativo no scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
